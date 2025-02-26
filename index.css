@@ -1,23 +1,36 @@
 
+/* ************ common ***************** */
+
+
+/* 'Niramit' */
+@import url('https://fonts.googleapis.com/css2?family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+/* 'Funnel Display' */
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Funnel Display", sans-serif;
+  /* font-family: "Niramit", sans-serif; */
   font-size: 20px;
-  background-color: #000;
   color: #fff;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  background-color: #000;
 }
 
 .container {
-  margin: 10px;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -25,23 +38,22 @@ main {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.5;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.5;
   padding-left: 20px;
 }
 
 h3, h4, h5 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
 }
-
 
 .hidden {
   position: absolute;
@@ -49,21 +61,187 @@ h3, h4, h5 {
   visibility: hidden;
 }
 
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 
-/* ************ button-start ***************** */
-.button-start {
-  margin: 0 auto;
-  width: 200px;
-  height: 80px;
-  border-radius: 10px;
-  font-size: 26px;
-  cursor: pointer;
+
+/* ************ BUTTONS ***************** */
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn--primary {
+  font-weight: 700;
+  width: 200px;
+  min-height: 80px;
+  font-size: 26px;
+  color: #db2864;
+  background-color: #000;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
+.btn--primary:hover {
+  color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 10px 5px;
+}
+
+.btn--secondary {
+  font-weight: 700;
+  font-size: 22px;
+  color: #fff;
+  background-color: #db2864;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
+.btn--secondary:hover {
+  color: #fff;
+  background-color: #9b1d47;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 10px 5px;
+}
+
+
+/* ************ INPUTS LABELS ***************** */
+
+input, label, select {
+  min-width: 100px;
+  min-height: 50px;
+  font-size: 20px;
+  line-height: 1.25;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ************ HEADER ***************** */
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.header__logo p {
+  font-size: 40px;
+  font-weight: 700;
+  color: #f84c85;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.header__logo p span {
+  color: #78f4db;
+}
+
+/* ************ MAIN ***************** */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 150px;
+}
+
+.main__content {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main__wellcome {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main__wellcome span {
+  color: #f84c85;
+}
+
+.no-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+
+/* ************ FILTERS ***************** */
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #78f4db;
+  gap: 10px;
+  padding: 20px;
+}
+
+.filter-title {
+  font-size: 30px;
+  font-weight: 700;
+  /* color: #f84c85; */
+}
+.filter fieldset {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 50px;
+}
+
+/* .filter label {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+.filter__input {
+  font-size: 20px;
+  min-width: 100px;
+}
+
+.filter__input--text {
+  width: 500px;;
 }
 
 
 
 
 /* ************ PRELOADER ***************** */
+
+
+
+/* ************ FOOTER ***************** */
+
+.footer {
+  width: 100%;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

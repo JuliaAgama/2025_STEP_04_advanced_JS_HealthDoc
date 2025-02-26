@@ -16,39 +16,92 @@
     ></script>
     <script module src="index.js"></script>
   </head>
+
   <body>
     <header class="header">
       <div class="container">
         <div class="header__content">
-          <nav class="header__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#" class="nav__link">Home</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">About</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Services</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Contact</a>
-              </li>
-            </ul>
-          </nav>
+          <a href="#" class="header__logo logo">
+            <img
+              class="logo__img"
+              src="./img/icons/HealthDoc.png"
+              alt="Health Doc"
+              class="logo"
+            />
+            <p class="logo__title"><span>Health</span> Doc</p>
+          </a>
+          <div class="header__enter">
+            <button class="enter__btn btn btn--primary hidden">Enter</button>
+          </div>
+          <div class="header__add-visit">
+            <button class="add-visit__btn btn btn--primary">Add a visit</button>
+          </div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <section class="section">
-        <div class="container">
-          <div class="section__content"></div>
+      <h1 class="main__wellcome hidden">Wellcome to <span>Health Doc</span></h1>
+
+      <div class="container">
+        <div class="main__content">
+          <p class="no-items hidden">No items have been added</p>
+
+          <div class="filter-wrapper">
+            <form action="#" method="GET" class="filter">
+              <h2 class="filter-title">Filter visits:</h2>
+              <!-- <legend class="form-legend">Filter all visits:</legend> -->
+              <fieldset class="filter__inputs-container">
+                <!-- <label for="content">Content: -->
+                  <input
+                    type="text"
+                    class="filter__input filter__input--text"
+                    name="content"
+                    id="content"
+                    placeholder="Start typing key words here"
+                  />
+                </label>
+                <!-- <label for="status">Status: -->
+                  <select
+                    name="status"
+                    id="status"
+                    class="filter__input"
+                    placeholder="Status"
+                  >
+                    <option value="all " selected>Status</option>
+                    <option value="open">-- Open</option>
+                    <option value="done">-- Done</option>
+                  </select>
+                </label>
+                <!-- <label for="status">Urgency: -->
+                  <select name="urgency" id="urgency" class="filter__input">
+                    <option value="all" selected>Urgency</option>
+                    <option value="high">-- High</option>
+                    <option value="normal">-- Normal</option>
+                    <option value="low">-- Low</option>
+                  </select>
+                <!-- </label> -->
+              </fieldset>
+              <button
+                type="submit"
+                class="filter__submit btn btn--secondary"
+                name="filter-submit"
+                id="filter-submit"
+              >
+                OK
+              </button>
+            </form>
+          </div>
+
+          <div class="visits-wrapper" id="visits">
+            <!-- code for visits -->
+            <!-- список створених візитів -->
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer fixed-bottom">
       <div class="container">
         <div class="footer__content">
           <p class="footer__text">
