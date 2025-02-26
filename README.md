@@ -32,7 +32,7 @@ Student 3:
 # Web Preview link
 <>
 
-TO ADD GITHUB PAGES from DIST: (git subtree push --prefix dist origin gh-pages)
+
 
 # GitHub link
 
