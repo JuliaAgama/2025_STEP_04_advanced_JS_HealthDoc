@@ -30,10 +30,14 @@
             />
             <p class="logo__title"><span>Health</span> Doc</p>
           </a>
+
           <div class="header__enter">
-            <button class="enter__btn btn btn--primary hidden">Enter</button>
+            <!-- <div class="header__enter hidden"> -->
+            <button class="enter__btn btn btn--primary">Enter</button>
           </div>
-          <div class="header__add-visit">
+
+          <!-- <div class="header__add-visit"> -->
+          <div class="header__add-visit hidden">
             <button class="add-visit__btn btn btn--primary">Add a visit</button>
           </div>
         </div>
@@ -41,18 +45,24 @@
     </header>
 
     <main class="main">
-      <h1 class="main__wellcome hidden">Wellcome to <span>Health Doc</span></h1>
+      <!-- <section class="wellcome-section"> -->
+      <section class="wellcome-section hidden">
+        <h1 class="main__wellcome">Wellcome to <span>Health Doc</span></h1>
+      </section>
 
-      <div class="container">
-        <div class="main__content">
-          <p class="no-items hidden">No items have been added</p>
+      <!-- <section class="authorized-section"> -->
+      <section class="authorized-section hidden">
+        <div class="container">
+          <div class="main__content">
+            <p class="no-items">No items have been added</p>
+            <!-- <p class="no-items hidden">No items have been added</p> -->
 
-          <div class="filter-wrapper">
-            <form action="#" method="GET" class="filter">
-              <h2 class="filter-title">Filter visits:</h2>
-              <!-- <legend class="form-legend">Filter all visits:</legend> -->
-              <fieldset class="filter__inputs-container">
-                <!-- <label for="content">Content: -->
+            <div class="filter-wrapper">
+              <!-- <div class="filter-wrapper hidden"> -->
+              <form action="#" method="GET" class="filter">
+                <h2 class="filter-title">Filter visits:</h2>
+
+                <fieldset class="filter__inputs-container">
                   <input
                     type="text"
                     class="filter__input filter__input--text"
@@ -60,8 +70,7 @@
                     id="content"
                     placeholder="Start typing key words here"
                   />
-                </label>
-                <!-- <label for="status">Status: -->
+
                   <select
                     name="status"
                     id="status"
@@ -72,33 +81,24 @@
                     <option value="open">-- Open</option>
                     <option value="done">-- Done</option>
                   </select>
-                </label>
-                <!-- <label for="status">Urgency: -->
+
                   <select name="urgency" id="urgency" class="filter__input">
                     <option value="all" selected>Urgency</option>
                     <option value="high">-- High</option>
                     <option value="normal">-- Normal</option>
                     <option value="low">-- Low</option>
                   </select>
-                <!-- </label> -->
-              </fieldset>
-              <!-- <button
-                type="submit"
-                class="filter__submit btn btn--secondary"
-                name="filter-submit"
-                id="filter-submit"
-              >
-                OK
-              </button> -->
-            </form>
-          </div>
+                </fieldset>
+              </form>
+            </div>
 
-          <div class="visits-wrapper" id="visits">
-            <!-- code for visits -->
-            <!-- список створених візитів -->
+            <div class="visits-wrapper" id="visits">
+              <!-- code for visits -->
+              <!-- картки створених візитів -->
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer class="footer fixed-bottom">
