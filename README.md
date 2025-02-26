@@ -11,6 +11,8 @@ HTML5, CSS3, JS.
 # Contributors
 
 Julia Verchyonova,
+Student 2,
+Stdent 3
 
 
 # Tasks & Responsibilities
