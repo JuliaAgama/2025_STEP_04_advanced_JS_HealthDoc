@@ -20,6 +20,7 @@ Stdent 3
 Julia Verchyonova:
 
 - basic project structure;
+- design;
 - basic HTML structure and CSS styles;
 - "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
 - "Login" button: Event listener, Function & Request, Login section HTML & CSS;
