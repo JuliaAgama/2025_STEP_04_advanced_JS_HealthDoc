@@ -25,6 +25,7 @@ Julia Verchyonova:
 - "Login" button: Event listener, Function & Request, Login section HTML & CSS;
 - "VISIT" class: constructor, render();
 - getAllCards request, list of cards rendering on page;
+<!-- - filter cards -->
 <!-- - "delete button": Event listener, Function & Request; -->
 
 Student 2:
@@ -32,8 +33,9 @@ Student 2:
 <!-- - showMore & showLess buttons and functions for each card; -->
 <!-- - "VISIT" class: edit(); -->
 <!-- - "edit button": Event listener, Function, getCard request; -->
-<!-- - PATCH request to edit card; -->
+<!-- - PATCH/PUT request to edit card; -->
 <!-- - classes "VisitDentist", "VisitCardiologist", "VisitTherapist": constructor, render(), remove(), edit(); -->
+<!-- - Drag & Drop -->
 <!-- - ... -->
 
 Student 3:
@@ -42,6 +44,7 @@ Student 3:
 <!-- - Modal: HTML & CSS; -->
 <!-- - Modal: Functions; -->
 <!-- - POST request to add card; -->
+<!-- - Modal: input validation -->
 <!-- - ... -->
 
 # Web Preview link
