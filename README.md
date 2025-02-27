@@ -19,15 +19,30 @@ Stdent 3
 
 Julia Verchyonova:
 
--
+- basic project structure;
+- basic HTML structure and CSS styles;
+- "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
+- "Login" button: Event listener, Function & Request, Login section HTML & CSS;
+- "VISIT" class: constructor, render();
+- getAllCards request, list of cards rendering on page;
+<!-- - "delete button": Event listener, Function & Request; -->
 
 Student 2:
 
--
+<!-- - showMore & showLess buttons and functions for each card; -->
+<!-- - "VISIT" class: edit(); -->
+<!-- - "edit button": Event listener, Function, getCard request; -->
+<!-- - PATCH request to edit card; -->
+<!-- - classes "VisitDentist", "VisitCardiologist", "VisitTherapist": constructor, render(), remove(), edit(); -->
+<!-- - ... -->
 
 Student 3:
 
--
+<!-- - "MODAL" class: constructor, render(), remove(); -->
+<!-- - Modal: HTML & CSS; -->
+<!-- - Modal: Functions; -->
+<!-- - POST request to add card; -->
+<!-- - ... -->
 
 # Web Preview link
 <>

@@ -69,23 +69,24 @@ h3, h4, h5 {
 }
 
 
+
 /* ************ BUTTONS ***************** */
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
   padding: 10px;
   cursor: pointer;
 }
 
 .btn--primary {
-  font-weight: 700;
   width: 200px;
   min-height: 80px;
   font-size: 26px;
+  font-weight: 700;
   color: #db2864;
   background-color: #000;
+  border-radius: 20px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
 }
 .btn--primary:hover {
@@ -94,16 +95,28 @@ h3, h4, h5 {
 }
 
 .btn--secondary {
-  font-weight: 700;
   font-size: 22px;
+  font-weight: 700;
   color: #fff;
   background-color: #db2864;
+  border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
 }
 .btn--secondary:hover {
   color: #fff;
   background-color: #9b1d47;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 10px 5px;
+}
+
+.btn--small {
+  font-size: 28px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+}
+.btn--small:hover {
+  /* color: #f84c85; */
+  color: #78f4db;
 }
 
 
@@ -118,6 +131,8 @@ input, label, select {
   padding: 10px;
 }
 
+
+
 /* ************ HEADER ***************** */
 
 .header__content {
@@ -131,6 +146,7 @@ input, label, select {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 10px 0 ;
 }
 
 .header__logo img {
@@ -151,8 +167,6 @@ input, label, select {
   color: #78f4db;
 }
 
-/* ************ MAIN ***************** */
-
 main {
   display: flex;
   flex-direction: column;
@@ -160,14 +174,11 @@ main {
   margin-bottom: 150px;
 }
 
-.main__content {
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
-.main__wellcome {
+
+/* ************ WELCOME ***************** */
+
+.welcome-section__title {
   position: absolute;
   text-align: center;
   text-transform: uppercase;
@@ -176,9 +187,64 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.main__wellcome span {
+.welcome-section__title span {
   color: #f84c85;
 }
+
+
+
+/* ************ LOGIN ***************** */
+
+.login-section__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-section__title {
+  font-size: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login-section__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.login__inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login__input {
+  width: 400px;
+}
+
+.login__btn {
+  width: 400px;
+}
+
+
+
+/* ************ MAIN ***************** */
+
+
+.authorized__content {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 
 .no-items {
   position: absolute;
@@ -187,6 +253,8 @@ main {
   transform: translate(-50%, -50%);
   font-size: 30px;
 }
+
+
 
 /* ************ FILTERS ***************** */
 
@@ -229,8 +297,45 @@ main {
 
 
 
+/* ************ VISIT CARD ***************** */
 
-/* ************ PRELOADER ***************** */
+.visits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.visit {
+  position: relative;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 20px;
+  padding: 60px 20px 60px;
+  border: 1px solid #78f4db;
+  border-radius: 10px;
+}
+
+.visit__buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.btn__more, .btn__less {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+}
 
 
 
@@ -246,3 +351,8 @@ main {
   align-items: center;
   padding: 20px;
 }
+
+
+
+
+/* ************ PRELOADER ***************** */

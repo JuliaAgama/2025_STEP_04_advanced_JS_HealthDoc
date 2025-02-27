@@ -14,7 +14,7 @@
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
-    <script module src="./js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </head>
 
   <body>
@@ -33,27 +33,47 @@
 
           <div class="header__enter">
             <!-- <div class="header__enter hidden"> -->
-            <button class="enter__btn btn btn--primary">Enter</button>
+            <button class="enter__btn btn btn--primary" id="enter-btn">Enter</button>
           </div>
 
           <!-- <div class="header__add-visit"> -->
           <div class="header__add-visit hidden">
-            <button class="add-visit__btn btn btn--primary">Add a visit</button>
+            <button class="add-visit__btn btn btn--primary" id="add-btn">Add a visit</button>
           </div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <!-- <section class="wellcome-section"> -->
-      <section class="wellcome-section hidden">
-        <h1 class="main__wellcome">Wellcome to <span>Health Doc</span></h1>
+      <section class="welcome-section">
+      <!-- <section class="welcome-section hidden"> -->
+        <h1 class="welcome-section__title">
+          Wellcome to <span>Health Doc</span>
+        </h1>
       </section>
 
-      <!-- <section class="authorized-section"> -->
+      <section class="login-section hidden">
+        <div class="container">
+          <div class="login-section__content">
+            <h1 class="login-section__title">
+              Please login
+            </h1>
+            <form id="login-form" class="login-section__form login">
+              <fieldset class="login__inputs-container">
+                  <input type="text" id="email" name="email" class="login__input" placeholder="E-mail" required>
+                  <input type="password" id="password" name="password" class="login__input" placeholder="Password"></input>
+              </fieldset>
+              <button type="submit" class="login__btn btn btn--secondary" id="login-btn">Log In</button>
+            </form>
+          </div>
+
+        </div>
+        <!-- <section class="login-section hidden"> -->
+      </section>
+
       <section class="authorized-section hidden">
         <div class="container">
-          <div class="main__content">
+          <div class="authorized__content">
             <p class="no-items">No items have been added</p>
             <!-- <p class="no-items hidden">No items have been added</p> -->
 
@@ -92,10 +112,10 @@
               </form>
             </div>
 
-            <div class="visits-wrapper" id="visits">
+            <ul class="visits" id="visits">
               <!-- code for visits -->
               <!-- картки створених візитів -->
-            </div>
+            </ul>
           </div>
         </div>
       </section>
