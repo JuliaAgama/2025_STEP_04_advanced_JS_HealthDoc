@@ -1,8 +1,7 @@
 
 // Function to handle the 'LOGIN' button click
 
-import getAllCards from '../api/getAllCards.js';
-import renderVisits from './renderVisits.js';
+import handleRenderVisits from './handleRenderVisits.js';
 
 
 const handleLogin = async (event) => {
@@ -23,7 +22,7 @@ const handleLogin = async (event) => {
     document.querySelector('.login-section').classList.add('hidden');
     document.querySelector('.authorized-section').classList.remove('hidden');
 
-    renderVisits();
+    handleRenderVisits();
 
   } catch (err) {
     console.log(err);

@@ -1,8 +1,7 @@
 
 // Function to handle the 'ENTER' button click
 
-import getAllCards from '../api/getAllCards.js';
-import renderVisits from './renderVisits.js';
+import handleRenderVisits from './handleRenderVisits.js';
 
 const handleEnter = async () => {
   let token = localStorage.getItem('token');
@@ -11,7 +10,7 @@ const handleEnter = async () => {
     document.querySelector('.authorized-section').classList.remove('hidden');
     document.querySelector('.header__add-visit').classList.remove('hidden');
 
-    renderVisits();
+    handleRenderVisits();
 
   } else {
     document.querySelector('.login-section').classList.remove('hidden');

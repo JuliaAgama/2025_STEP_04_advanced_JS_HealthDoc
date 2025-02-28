@@ -279,20 +279,13 @@ main {
   padding: 10px 50px;
 }
 
-/* .filter label {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
-
 .filter__input {
   font-size: 20px;
   min-width: 100px;
 }
 
 .filter__input--text {
-  width: 500px;;
+  width: 400px;;
 }
 
 
@@ -307,16 +300,49 @@ main {
 }
 
 .visit {
+  line-height: 1.25;
+  width: 270px;
   position: relative;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   gap: 20px;
   padding: 60px 20px 60px;
   border: 1px solid #78f4db;
   border-radius: 10px;
+}
+
+.visit__problem{
+  min-height: 50px;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  /* overflow-wrap: break-word; */
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+.visit__problem--more{
+  display: block;
+  overflow: initial;
+  text-overflow: initial;
+  line-clamp: unset;
+
+}
+
+.visit__status {
+  font-size: 24px;
+  position: absolute;
+  text-transform: capitalize;
+  color: #888;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+.visit__status--open {
+  color: #01f1c1;
 }
 
 .visit__buttons {
@@ -343,13 +369,15 @@ main {
 
 .footer {
   width: 100%;
+  background: #000;
+  border-top: 1px solid #555;
 }
 
 .footer__content {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 

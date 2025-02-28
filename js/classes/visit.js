@@ -2,27 +2,34 @@
 // class VISIT
 
 
+import deleteCard from "../api/deleteCard.js";
+
 // {
-//     "title": "Визит к Терапевту",
-//     "description": "Срочный визит",
-//     "doctor": "Family Doctor",
-//     "bp": "21",
-//     "age": 31,
-//     "weight": 55,
-//     "id": 228087
+//     "doctor": "cardiologist",
+//     "status": "open",
+//     "urgency": "normal",
+//     "problem": "bad sleep, high pressure, headache",
+//     "comment": "can come in March",
+//     "age": 65,
+//     "weight": 86,
+//     "id": 228094
 // }
+
 
 const visits = document.querySelector('#visits');
 
 class VISIT {
-    constructor({title, description, doctor, bp, age, weight, id}) {
-      this.title = title;
-      this.description = description;
+    constructor({doctor, patient, urgency, status, problem, age, weight, comment, id}) {
       this.doctor = doctor;
-      this.bp = bp;
+      this.patient = patient;
+      this.status = status;
+      this.urgency = urgency;
+      this.problem = problem;
       this.age = age;
       this.weight = weight;
+      this.comment = comment;
       this.id = id;
+
       this.visit = document.createElement('li');
       this.buttons = document.createElement('div');
       this.editBtn = document.createElement('button');
@@ -31,14 +38,17 @@ class VISIT {
       this.lessBtn = document.createElement('button');
     }
 
-    // Create the visit and render it on the page
+    // Create the visit on server and render it on the page
   render() {
     this.visit.classList.add('visit');
+    let statusOpen = this.status === 'open' ? 'visit__status--open' : ''
     this.visit.innerHTML = `
       <h3 class="visit__doctor">Doctor: ${this.doctor}</h3>
-      <p class="visit__urgency">Urgency: ${this.bp}</p>
-      <p class="visit__description">Problem: ${this.description}</p>
+      <p class="visit__urgency">Urgency: ${this.urgency}</p>
+      <p class="visit__patient">Patient: ${this.patient || 'Anonym'}</p>
+      <p class="visit__status ${statusOpen}">${this.status}</p>
     `;
+    console.log()
     this.buttons.classList.add('visit__buttons');
     this.editBtn.classList.add('btn', 'btn--small', 'btn__edit');
     this.deleteBtn.classList.add('btn', 'btn--small', 'btn__delete');
@@ -52,16 +62,37 @@ class VISIT {
 
     this.buttons.append(this.editBtn, this.deleteBtn);
     this.visit.append(this.buttons, this.moreBtn, this.lessBtn);
+
+    this.deleteBtn.addEventListener('click', async (event) => {
+      event.preventDefault;
+      this.remove();
+    });
+
+    this.editBtn.addEventListener('click', async (event) => {
+      event.preventDefault;
+      this.edit();
+    });
+
     visits.append(this.visit);
+  };
 
-  }
+    // Delete the visit on server and remove it from the page
+  remove() {
+    (async () => {
+      let response = await deleteCard(this.id);
+      response.status === 200 && this.visit.remove();
+      visits.children.length === 0 && document.querySelector('.no-items').classList.remove('hidden');
+    })();
+  };
 
-    // Delete the visit and remove it from the page
-  delete() {
-  }
+
     // Edit the visit on server and update it on the page
   edit() {
-  }
+
+    /*some code here
+    */
+
+  };
 };
 
 export default VISIT;

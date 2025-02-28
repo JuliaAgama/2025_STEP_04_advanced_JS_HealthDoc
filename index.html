@@ -60,8 +60,8 @@
             </h1>
             <form id="login-form" class="login-section__form login">
               <fieldset class="login__inputs-container">
-                  <input type="text" id="email" name="email" class="login__input" placeholder="E-mail" required>
-                  <input type="password" id="password" name="password" class="login__input" placeholder="Password"></input>
+                <input type="text" id="email" name="email" class="login__input" placeholder="E-mail" required>
+                <input type="password" id="password" name="password" class="login__input" placeholder="Password"></input>
               </fieldset>
               <button type="submit" class="login__btn btn btn--secondary" id="login-btn">Log In</button>
             </form>
@@ -75,10 +75,8 @@
         <div class="container">
           <div class="authorized__content">
             <p class="no-items">No items have been added</p>
-            <!-- <p class="no-items hidden">No items have been added</p> -->
 
             <div class="filter-wrapper">
-              <!-- <div class="filter-wrapper hidden"> -->
               <form action="#" method="GET" class="filter">
                 <h2 class="filter-title">Filter visits:</h2>
 
@@ -87,22 +85,24 @@
                     type="text"
                     class="filter__input filter__input--text"
                     name="content"
-                    id="content"
+                    id="filter-content"
                     placeholder="Start typing key words here"
                   />
 
-                  <select
-                    name="status"
-                    id="status"
-                    class="filter__input"
-                    placeholder="Status"
-                  >
-                    <option value="all " selected>Status</option>
+                  <select name="doctor" id="filter-doctor" class="filter__input">
+                    <option value="all" selected>Doctor</option>
+                    <option value="therapist">-- Therapist</option>
+                    <option value="cardiologist">-- Cardiologist</option>
+                    <option value="dentist">-- Dentist</option>
+                  </select>
+
+                  <select name="status" id="filter-status" class="filter__input">
+                    <option value="all" selected>Status</option>
                     <option value="open">-- Open</option>
                     <option value="done">-- Done</option>
                   </select>
 
-                  <select name="urgency" id="urgency" class="filter__input">
+                  <select name="urgency" id="filter-urgency" class="filter__input">
                     <option value="all" selected>Urgency</option>
                     <option value="high">-- High</option>
                     <option value="normal">-- Normal</option>
@@ -113,7 +113,7 @@
             </div>
 
             <ul class="visits" id="visits">
-              <!-- code for visits -->
+              <!-- JS code -->
               <!-- картки створених візитів -->
             </ul>
           </div>

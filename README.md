@@ -23,11 +23,13 @@ Julia Verchyonova:
 - design;
 - basic HTML structure and CSS styles;
 - "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
-- "Login" button: Event listener, Function & Request, Login section HTML & CSS;
+<!-- - "Login" modal: class, HTML & CSS -->
+- "Login" button: Event listener, Function & Request;
 - "VISIT" class: constructor, render();
 - getAllCards request, list of cards rendering on page;
-<!-- - filter cards -->
-<!-- - "delete button": Event listener, Function & Request; -->
+- filter cards
+- "delete button": Event listener, Function & Request;
+<!-- - local storage -->
 
 Student 2:
 
@@ -41,11 +43,11 @@ Student 2:
 
 Student 3:
 
-<!-- - "MODAL" class: constructor, render(), remove(); -->
-<!-- - Modal: HTML & CSS; -->
-<!-- - Modal: Functions; -->
+<!-- - Card "MODAL" class: constructor, render(), remove(); -->
+<!-- - Card Modal: HTML & CSS; -->
+<!-- - Card Modal: Functions; -->
 <!-- - POST request to add card; -->
-<!-- - Modal: input validation -->
+<!-- - Card Modal: input validation -->
 <!-- - ... -->
 
 # Web Preview link
