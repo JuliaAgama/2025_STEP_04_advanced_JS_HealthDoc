@@ -26,14 +26,13 @@ Julia Verchyonova:
 - Welcome section HTML & CSS;
 - "Enter" button: Event listener, handleEnter function;
 - "Login" section: HTML & CSS;
-- "Login" button: Event listener, handleLogin function, getToken request, localStorage;
+- "Login" button: Event listener, handleLogin function, getToken request, cookie: setCookie(), getCookie() and logics;
 - "VISIT" class: constructor, render(), remove(), showMore(), showLess(), handleRenderVisits function;
 - "getAllCards" request, list of cards rendering on page;
 - "showMore" & "showLess" buttons and functions for each card to show more\less info;
 - "delete" button: Event listener, deleteCard request;
-- "filter" cards: HTML, CSS, handleFilter & matchSearch functions
+- "filter" cards: HTML, CSS, handleFilter & matchSearch functions, debounce util;
 - "PRELOADER": class and logics;
-<!-- - local storage for filters ???? -->
 
 Student 2:
 

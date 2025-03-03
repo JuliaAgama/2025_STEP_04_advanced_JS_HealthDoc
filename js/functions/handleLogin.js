@@ -4,6 +4,7 @@
 
 import getToken from '../api/getToken.js';
 import handleRenderVisits from './handleRenderVisits.js';
+import { setCookie } from '../utils/cookie.js';
 
 
 const handleLogin = async (event) => {
@@ -14,7 +15,8 @@ const handleLogin = async (event) => {
   });
   const token = await getToken(body);
 
-  token && localStorage.setItem('token', token);
+  token && setCookie('token', token);
+  // token && localStorage.setItem('token', token);
 
   inputs.forEach(input => {
     input.addEventListener('focus', event => {

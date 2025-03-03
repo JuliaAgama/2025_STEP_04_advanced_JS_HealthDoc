@@ -2,11 +2,14 @@
 // Function to handle the 'ENTER' button click
 
 import handleRenderVisits from './handleRenderVisits.js';
+import { getCookie } from '../utils/cookie.js';
+
 
 const handleEnter = async () => {
 // const handleEnter = () => {
 
-  if (localStorage.getItem('token')) {
+  if (getCookie('token')) {
+  // if (localStorage.getItem('token')) {
     document.querySelector('.authorized-section').classList.remove('hidden');
     document.querySelector('.header__add-visit').classList.remove('hidden');
 
