@@ -19,38 +19,77 @@ Student 3
 
 Julia Verchyonova:
 
-- basic project structure;
+- repository creator and holder;
 - design;
-- basic HTML structure and CSS styles;
-- instance setting for AJAX requests;
-- Welcome section HTML & CSS;
-- "Enter" button: Event listener, handleEnter function;
-- "Login" section: HTML & CSS;
-- "Login" button: Event listener, handleLogin function, getToken request, cookie: setCookie(), getCookie() and logics;
-- "VISIT" class: constructor, render(), remove(), showMore(), showLess(), handleRenderVisits function;
-- "getAllCards" request, list of cards rendering on page;
-- "showMore" & "showLess" buttons and functions for each card to show more\less info;
-- "delete" button: Event listener, deleteCard request;
-- "filter" cards: HTML, CSS, handleFilter & matchSearch functions, debounce util;
-- "PRELOADER": class and logics;
+- basic project structure, incl. HTML & CSS styles;
+- card \ visit - db object structure;
+- HTML & CSS:
+  - "Welcome" section (header, main, footer): HTML & CSS;
+  - "Login" section and form: HTML & CSS;
+  - "Autorized" section: HTML & CSS:
+    - Header & "add a visit" button;
+    - "Filters" container and filter inputs;
+    - "Visits" container and cards;
+- API:
+  - axios instance() setting;
+  - getToken(body) request;
+  - getAllCards() request for list of cards to render on page;
+  - deleteCard(id) request for one card;
+- utils & handlers & functions:
+  - handleLEnter();
+  - handleLogin();
+  - cookie utils: getCookie(), setCookie(), deleteCookie();
+  - handleRenderVisits() function;
+  - filtering:
+    - debounce() util;
+    - matchSearch() helper to iterate all fields over an object;
+    - handleFilter() function;
+- classes:
+  - PRELOADER class: constructor, render(parent), remove();
+  - "VISIT" class: constructor, render(parent), remove(), showMore(), showLess();
+- buttons & eventListeners logics:
+  - "enter" button eventListener: handleEnter(), getCookie(token) -> to Login section or to Authorized section & handleRenderVisits();
+  - "login" submit button eventListener: handleLogin(), getToken(body), setCookie(), getCookie(token) -> to Authorized section & handleRenderVisits();
+  - "back" button eventListener on Login page -> to Enter page;
+  - "showMore" & "showLess" buttons eventListeners -> Visit.shoMore() & Visit.showLess();
+  - "delete" button eventListener: deleteCard(id) request, Visit.remove();
+  - filter inputs - "content', "doctor", "status", "urgency" eventListeners: handleFilter(), debounce(function, timeout), getAllCards(),  matchSearch(card, contentFilter);
 
 Student 2:
 
-<!-- - "VISIT" class: edit(); -->
-<!-- - "edit button": Event listener, Function, getCard request; -->
-<!-- - PATCH/PUT request to edit card; -->
-<!-- - classes "VisitDentist", "VisitCardiologist", "VisitTherapist": constructor, render(), remove(), edit(); -->
-<!-- - Drag & Drop -->
-<!-- - ... -->
+- API:
+  - getCard(id) request for one card;
+  - editCard(id) PATCH/PUT request to edit card object on server;
+- utils & handlers & functions:
+  - ...
+- classes:
+  - "VISIT" class: edit();
+  - "VisitDentist", "VisitCardiologist", "VisitTherapist" (?) or "ModalDentist", "ModalCardiologist", "ModalTherapist" (?);
+- buttons & eventListeners logics:
+  - "edit" button eventListener: getCard(id) request, Visit.edit();
+- Drag & Drop;
+- ...;
+- ДОПІШІТЬ СВОЄ;
+
 
 Student 3:
 
-<!-- - Card "MODAL" class: constructor, render(), remove(); -->
-<!-- - Card Modal: HTML & CSS; -->
-<!-- - Card Modal: Functions; -->
-<!-- - POST request to add card; -->
-<!-- - Card Modal: input validation -->
-<!-- - ... -->
+- HTML & CSS:
+  - Modal for new/edited visit;
+- API:
+  - postCard() request to add new card to server;
+- utils & handlers & functions:
+  - ...;
+  - Card Modal: input validation;
+  - ...;
+- classes:
+  - Card "MODAL" class: constructor, render(), remove();
+- buttons & eventListeners logics:
+  - "add card" submit eventListener: ..... send card to server, render card in total list;
+  - ...;
+- ДОПІШІТЬ СВОЄ;
+
+
 
 # Web Preview link
 <https://juliaagama.github.io/2025_STEP_04_advanced_JS_HealthDoc/>

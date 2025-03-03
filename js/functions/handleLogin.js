@@ -4,7 +4,7 @@
 
 import getToken from '../api/getToken.js';
 import handleRenderVisits from './handleRenderVisits.js';
-import { setCookie } from '../utils/cookie.js';
+import { getCookie, setCookie } from '../utils/cookie.js';
 
 
 const handleLogin = async (event) => {
@@ -25,7 +25,8 @@ const handleLogin = async (event) => {
     });
   });
 
-  if (localStorage.getItem('token')) {
+  if (getCookie('token')) {
+  // if (localStorage.getItem('token')) {
     document.querySelector('.header__add-visit').classList.remove('hidden');
     document.querySelector('.login-section').classList.add('hidden');
     document.querySelector('.authorized-section').classList.remove('hidden');

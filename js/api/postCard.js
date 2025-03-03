@@ -4,7 +4,7 @@
 
 import instance from "./instance.js";
 
-// postCard function
+// postCard request
 
 
 
@@ -23,10 +23,10 @@ import instance from "./instance.js";
 
 
 
+/************************    EXAMPLES     ***********************/
 
 
-
-//fake POST requests:
+//fake POST requests to create and render sample cards:
 
 // fetch("https://ajax.test-danit.com/api/v2/cards", {
 //   method: 'POST',
