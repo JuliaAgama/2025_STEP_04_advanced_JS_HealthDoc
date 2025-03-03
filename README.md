@@ -32,7 +32,7 @@ Julia Verchyonova:
 - "showMore" & "showLess" buttons and functions for each card to show more\less info;
 - "delete" button: Event listener, deleteCard request;
 - "filter" cards: HTML, CSS, handleFilter & matchSearch functions
-- "PRELOADER": class,
+- "PRELOADER": class and logics;
 <!-- - local storage for filters ???? -->
 
 Student 2:
