@@ -22,14 +22,17 @@ Julia Verchyonova:
 - basic project structure;
 - design;
 - basic HTML structure and CSS styles;
-- "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
-- "Login" modal: HTML & CSS
-- "Login" button: Event listener, Function & Request;
-- "VISIT" class: constructor, render();
-- getAllCards request, list of cards rendering on page;
-- filter cards
-- "delete button": Event listener, Function & Request;
-- showMore & showLess buttons and functions for each card;
+- instance setting for AJAX requests;
+- Welcome section HTML & CSS;
+- "Enter" button: Event listener, handleEnter function;
+- "Login" section: HTML & CSS;
+- "Login" button: Event listener, handleLogin function, getToken request, localStorage;
+- "VISIT" class: constructor, render(), remove(), showMore(), showLess(), handleRenderVisits function;
+- "getAllCards" request, list of cards rendering on page;
+- "showMore" & "showLess" buttons and functions for each card to show more\less info;
+- "delete" button: Event listener, deleteCard request;
+- "filter" cards: HTML, CSS, handleFilter & matchSearch functions
+- "PRELOADER": class,
 <!-- - local storage for filters ???? -->
 
 Student 2:
