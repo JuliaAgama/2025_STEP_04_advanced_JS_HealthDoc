@@ -45,7 +45,7 @@ Julia Verchyonova:
     - matchSearch() helper to iterate all fields over an object;
     - handleFilter() function;
 - classes:
-  - PRELOADER class: constructor, render(parent), remove();
+  - "PRELOADER" class: constructor, render(parent), remove();
   - "VISIT" class: constructor, render(parent), remove(), showMore(), showLess();
 - buttons & eventListeners logics:
   - "enter" button eventListener: handleEnter(), getCookie(token) -> to Login section or to Authorized section & handleRenderVisits();
