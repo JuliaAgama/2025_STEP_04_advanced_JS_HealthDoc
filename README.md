@@ -51,7 +51,7 @@ Student 3:
 <!-- - ... -->
 
 # Web Preview link
-<>
+<https://juliaagama.github.io/2025_STEP_04_advanced_JS_HealthDoc/>
 
 login: <doctor@health-doc.com>, pass: 1234
 
