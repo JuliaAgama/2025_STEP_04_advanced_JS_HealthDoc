@@ -3,17 +3,25 @@ import handleEnter from './functions/handleEnter.js';
 import handleLogin from './functions/handleLogin.js';
 import handleFilter from './functions/handleFilter.js';
 
+// let allCards = [];
+
 
 // ENTER button click
 document.querySelector('#enter-btn').addEventListener('click', e => {
   e.preventDefault();
   handleEnter();
 });
-////////////////////////      login modal !!!        /////////////////////
 
 
 
-
+// LOGIN section: "BACK" to Enter section
+document.querySelector('.login-section').addEventListener('click', e => {
+  if (e.target.id === 'login-section' || e.target.id === 'back-to-welcome') {
+    document.querySelector('.welcome-section').classList.remove('hidden');
+    document.querySelector('.header__enter').classList.remove('hidden');
+    document.querySelector('.login-section').classList.add('hidden');
+  };
+});
 
 
 
@@ -42,26 +50,24 @@ document.querySelector('#add-btn').addEventListener('click', e => {
 document.querySelector('#filter-content').addEventListener('input', e => {
   e.preventDefault();
   handleFilter();
+  // handleFilter(allCards);
 });
 document.querySelector('#filter-doctor').addEventListener('change', e => {
   e.preventDefault();
   handleFilter();
+  // handleFilter(allCards);
 });
 document.querySelector('#filter-status').addEventListener('change', e => {
   e.preventDefault();
   handleFilter();
+  // handleFilter(allCards);
 });
 document.querySelector('#filter-urgency').addEventListener('change', e => {
   e.preventDefault();
   handleFilter();
+  // handleFilter(allCards);
 });
 
-
-
-
-
-
-// postCard function
 
 
 
@@ -75,12 +81,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'therapist',
-//     status: "open",
 //     urgency: 'low',
+//     status: "open",
+//     patient: "Smith, John",
 //     problem: 'cough, high temperature, running nose',
-//     comment: 'Vitamin C, D, hot tea, paracetamol',
-//     age: 12,
-//     weight: 26
+//     description: 'Vitamin C, D, hot tea, paracetamol',
+//     more: {
+//      age: 12,
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -95,12 +103,17 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'cardiologist',
-//     status: "done",
 //     urgency: 'high',
+//     status: "done",
+//     patient: "Hopkins, Mary",
 //     problem: 'pain in heart',
-//     comment: 'urgent tests, probably surgery required',
-//     age: 42,
-//     weight: 98
+//     description: 'urgent tests, probably surgery required',
+//     more: {
+//      age: 42,
+//      weight: 98,
+//      pressure: '120 / 80',
+//      anamnesis: 'diabetes, heart attack, flue, pneumonia',
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -115,12 +128,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'dentist',
+//     urgency: 'normal',
 //     status: "open",
-//     urgency: 'normal',
+//     patient: "Klide, Boris",
 //     problem: 'black teeth, bad smell',
-//     comment: 'can wait',
-//     age: 21,
-//     weight: 67
+//     description: 'can wait',
+//     more: {
+//      lastVisit: '2023-12-04',
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -135,12 +150,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'therapist',
-//     status: "done",
 //     urgency: 'normal',
+//     status: "done",
+//     patient: "Johnson, Ivan",
 //     problem: 'flue',
-//     comment: 'hot tea treatment',
-//     age: 53,
-//     weight: 72
+//     description: 'hot tea treatment',
+//     more: {
+//      age: 37,
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -155,12 +172,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'therapist',
-//     status: "done",
 //     urgency: 'high',
+//     status: "done",
+//     patient: "Poppins, Jack",
 //     problem: 'high temperature, running nose',
-//     comment: 'hot tea, paracetamol',
-//     age: 29,
-//     weight: 65
+//     description: 'hot tea, paracetamol',
+//     more: {
+//      age: 28,
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -175,12 +194,17 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'cardiologist',
-//     status: "open",
 //     urgency: 'normal',
+//     status: "open",
+//     patient: "Perez, Thomas",
 //     problem: 'some noise',
-//     comment: 'regular tests',
-//     age: 32,
-//     weight: 81
+//     description: 'regular tests',
+//     more: {
+//      age: 73,
+//      weight: 76,
+//      pressure: '140 / 100',
+//      anamnesis: 'heart attack, pneumonia',
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -195,12 +219,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'dentist',
-//     status: "done",
 //     urgency: 'low',
+//     status: "done",
+//     patient: "Malcoln, Kristine",
 //     problem: 'bad smell',
-//     comment: 'wait',
-//     age: 16,
-//     weight: 49
+//     description: 'wait',
+//     more: {
+//      lastVisit: '2024-06-15',
+//     }
 //   })
 // })
 //   .then(response => response.json())
@@ -215,12 +241,14 @@ document.querySelector('#filter-urgency').addEventListener('change', e => {
 //   },
 //   body: JSON.stringify({
 //     doctor: 'therapist',
-//     status: "open",
 //     urgency: 'high',
+//     status: "open",
+//     patient: "Chaplin, Charlie",
 //     problem: 'pain in breast',
-//     comment: 'send to cardiologist',
-//     age: 78,
-//     weight: 83
+//     description: 'send to cardiologist',
+//     more: {
+//      age: 53,
+//     }
 //   })
 // })
 //   .then(response => response.json())

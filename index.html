@@ -52,29 +52,27 @@
         </h1>
       </section>
 
-      <section class="login-section hidden">
+      <section class="login-section hidden" id="login-section">
         <div class="container">
           <div class="login-section__content">
             <h1 class="login-section__title">
               Please login
             </h1>
+            <button class="btn btn--small login-section__back" id="back-to-welcome">Back</button>
             <form id="login-form" class="login-section__form login">
               <fieldset class="login__inputs-container">
                 <input type="text" id="email" name="email" class="login__input" placeholder="E-mail" required>
-                <input type="password" id="password" name="password" class="login__input" placeholder="Password"></input>
+                <input type="password" id="password" name="password" class="login__input" placeholder="Password" required></input>
               </fieldset>
               <button type="submit" class="login__btn btn btn--secondary" id="login-btn">Log In</button>
             </form>
           </div>
-
         </div>
-        <!-- <section class="login-section hidden"> -->
       </section>
 
       <section class="authorized-section hidden">
         <div class="container">
           <div class="authorized__content">
-            <p class="no-items">No items have been added</p>
 
             <div class="filter-wrapper">
               <form action="#" method="GET" class="filter">
@@ -113,7 +111,9 @@
             </div>
 
             <ul class="visits" id="visits">
-              <!-- JS code -->
+              <!-- JS code: -->
+              <!-- preloader while waiting server -->
+              <!-- 'no items' if empty -->
               <!-- картки створених візитів -->
             </ul>
           </div>
@@ -121,7 +121,7 @@
       </section>
     </main>
 
-    <footer class="footer fixed-bottom">
+    <footer class="footer>
       <div class="container">
         <div class="footer__content">
           <p class="footer__text">

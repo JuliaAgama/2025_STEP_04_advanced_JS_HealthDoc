@@ -12,7 +12,7 @@ HTML5, CSS3, JS.
 
 Julia Verchyonova,
 Student 2,
-Stdent 3
+Student 3
 
 
 # Tasks & Responsibilities
@@ -23,17 +23,17 @@ Julia Verchyonova:
 - design;
 - basic HTML structure and CSS styles;
 - "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
-<!-- - "Login" modal: class, HTML & CSS -->
+- "Login" modal: class, HTML & CSS
 - "Login" button: Event listener, Function & Request;
 - "VISIT" class: constructor, render();
 - getAllCards request, list of cards rendering on page;
 - filter cards
 - "delete button": Event listener, Function & Request;
-<!-- - local storage -->
+- showMore & showLess buttons and functions for each card;
+<!-- - local storage for filters ???? -->
 
 Student 2:
 
-<!-- - showMore & showLess buttons and functions for each card; -->
 <!-- - "VISIT" class: edit(); -->
 <!-- - "edit button": Event listener, Function, getCard request; -->
 <!-- - PATCH/PUT request to edit card; -->
