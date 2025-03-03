@@ -51,9 +51,9 @@ Julia Verchyonova:
   - "enter" button eventListener: handleEnter(), getCookie(token) -> to Login section or to Authorized section & handleRenderVisits();
   - "login" submit button eventListener: handleLogin(), getToken(body), setCookie(), getCookie(token) -> to Authorized section & handleRenderVisits();
   - "back" button eventListener on Login page -> to Enter page;
-  - "showMore" & "showLess" buttons eventListeners -> Visit.shoMore() & Visit.showLess();
-  - "delete" button eventListener: deleteCard(id) request, Visit.remove();
-  - filter inputs - "content', "doctor", "status", "urgency" eventListeners: handleFilter(), debounce(function, timeout), getAllCards(),  matchSearch(card, contentFilter);
+  - "showMore" & "showLess" buttons eventListeners -> Visit.showMore() & Visit.showLess();
+  - "delete" button eventListener: deleteCard(id) request -> Visit.remove();
+  - filter inputs - "content', "doctor", "status", "urgency" eventListeners: handleFilter(), debounce(function, timeout), getAllCards(),  matchSearch(card, contentFilter) -> Visit.render();
 
 Student 2:
 
