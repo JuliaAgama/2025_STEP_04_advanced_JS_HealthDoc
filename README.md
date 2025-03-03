@@ -23,7 +23,7 @@ Julia Verchyonova:
 - design;
 - basic HTML structure and CSS styles;
 - "Enter" button: Event listener, Function & Request, Welcome section HTML & CSS;
-- "Login" modal: class, HTML & CSS
+- "Login" modal: HTML & CSS
 - "Login" button: Event listener, Function & Request;
 - "VISIT" class: constructor, render();
 - getAllCards request, list of cards rendering on page;
