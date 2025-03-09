@@ -22,7 +22,7 @@ html {
 body {
   font-family: "Funnel Display", sans-serif;
   width: calc(100vw - 30px);
-  margin-right: calc(-1 * (100vw – 100%));
+  margin-right: calc(-1 * (100vw - 100%));
   font-size: 20px;
   color: #fff;
   background-color: #000;
@@ -122,15 +122,25 @@ h3, h4, h5 {
 }
 
 
-
 /* ************ INPUTS LABELS ***************** */
 
-input, label, select {
+input, label, select, textarea {
   min-width: 100px;
   min-height: 50px;
   font-size: 20px;
   line-height: 1.25;
   border-radius: 10px;
+  padding: 10px;
+}
+
+input[type='radio'] {
+  accent-color: #db2864;
+}
+textarea {
+  resize: none;
+}
+
+fieldset p {
   padding: 10px;
 }
 
@@ -175,7 +185,7 @@ input, label, select {
 /* ************ MAIN ***************** */
 
 main {
-  min-height: calc(100vh - 140px - 70px - 150px);
+  min-height: calc(100vh - 170px - 71px - 150px);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -202,6 +212,7 @@ main {
 
 
 /* ************ LOGIN ***************** */
+
 .login-section {
   position: absolute;
   top: 0;
@@ -267,7 +278,9 @@ main {
   color: #db2864;
 }
 
-/* ************ MAIN ***************** */
+
+
+/* ************ AUTHORIZED ***************** */
 
 
 .authorized__content {
@@ -327,6 +340,7 @@ main {
 .visits {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -396,6 +410,122 @@ main {
 
 
 
+/* ************ MODAL ***************** */
+
+.modal-section {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.modal-section__wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(38, 38, 38, 0.5);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-section__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-width: 80%;
+  min-height: 75%;
+  background: #000;
+  border-radius: 20px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+  padding: 20px;
+}
+
+.modal-section__close-btn {
+  font-size: 50px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal-section__title {
+  text-transform: uppercase;
+  color: #01f1c1;
+}
+.modal-section__close-btn:hover {
+  color: #db2864;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.form__main {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* justify-content: space-between; */
+  gap: 30px;
+}
+
+.form__patient {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.form__urgency, .form__status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.form__input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form__input {
+  /* padding-left: 10px; */
+}
+
+.form__radio {
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.form__doctor {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.form__more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.form__submit {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 /* ************ FOOTER ***************** */
 
 .footer {
@@ -425,7 +555,7 @@ main {
   aspect-ratio: 1;
   border-radius: 50%;
   background: #25b09b;
-  --_m: 
+  --_m:
     conic-gradient(#0000 10%,#000),
     linear-gradient(#000 0 0) content-box;
   -webkit-mask: var(--_m);

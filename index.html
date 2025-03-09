@@ -32,11 +32,9 @@
           </a>
 
           <div class="header__enter">
-            <!-- <div class="header__enter hidden"> -->
             <button class="enter__btn btn btn--primary" id="enter-btn">Enter</button>
           </div>
 
-          <!-- <div class="header__add-visit"> -->
           <div class="header__add-visit hidden">
             <button class="add-visit__btn btn btn--primary" id="add-btn">Add a visit</button>
           </div>
@@ -46,9 +44,8 @@
 
     <main class="main">
       <section class="welcome-section">
-      <!-- <section class="welcome-section hidden"> -->
         <h1 class="welcome-section__title">
-          Wellcome to <span>Health Doc</span>
+          Welcome to <span>Health Doc</span>
         </h1>
       </section>
 
@@ -112,16 +109,13 @@
 
             <ul class="visits" id="visits">
               <!-- JS code: -->
-              <!-- preloader while waiting server -->
-              <!-- 'no items' if empty -->
-              <!-- картки створених візитів -->
             </ul>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer>
+    <footer class="footer">
       <div class="container">
         <div class="footer__content">
           <p class="footer__text">
@@ -130,5 +124,71 @@
         </div>
       </div>
     </footer>
+
+    <template id="modal-template">
+      <section class="modal-section">
+        <div class="modal-section__wrapper">
+          <div class="modal-section__content">
+            <button class="modal-section__close-btn">&times;</button>
+            <h2 class="modal-section__title">Visit </h2>
+            <form action="#" method="post" class="modal__form form">
+
+              <div class="form__main">
+                <fieldset class="form__patient" id="form-patient">
+                  <p class="form__patient-legend">Patient</p>
+                  <label for="first-name" class="form__input-label" >First name
+                    <input type="text" id="first-name" name="first-name"  class="form__input" required/>
+                  </label>
+                  <label for="last-name" class="form__input-label" >Last name
+                    <input type="text" id="last-name" name="last-name"  class="form__input" required/>
+                  </label>
+
+                </fieldset>
+
+                <fieldset class="form__urgency" id="form-urgency" name="form-urgency">
+                  <p class="form__urgency-legend">Urgency</p>
+                  <div>
+                    <input type="radio" id="high-urgency" name="form-urgency" value="high" class="form__radio" checked />
+                    <label for="high-urgency" class="form__radio-label" >High</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="normal-urgency" name="form-urgency" value="normal" class="form__radio" />
+                    <label for="normal-urgency" class="form__radio-label" >Normal</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="low-urgency" name="form-urgency" value="low" class="form__radio" />
+                    <label for="low-urgency" class="form__radio-label" >Low</label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="form__status" id="form-status" name="form-status">
+                  <p class="form__status-legend">Status</p>
+                  <div>
+                    <input type="radio" id="open-status" name="form-status" value="open" class="form__radio" checked />
+                    <label for="open-status" class="form__radio-label" >Open</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="done-status" name="form-status" value="done" class="form__radio" />
+                    <label for="done-status" class="form__radio-label" >Done</label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <select name="doctor" id="doctor" class="form__doctor">
+                <option value="none" class="form__doctor-option" selected disabled>-- Choose a doctor --</option>
+                <option value="cardiologist" class="form__doctor-option"> Cardiologist</option>
+                <option value="dentist" class="form__doctor-option"> Dentist</option>
+                <option value="therapist" class="form__doctor-option"> Therapist</option>
+              </select>
+              <fieldset class="form__more" id="form-more">
+                <!-- JS code: -->
+              </fieldset>
+              <input id="form-submit" type="submit" class="form__submit btn btn--primary hidden" value="Save"></input>
+            </form>
+          </div>
+        </div>
+      </section>
+    </template>
+
   </body>
 </html>

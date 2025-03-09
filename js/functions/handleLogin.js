@@ -3,7 +3,7 @@
 // login: <doctor@health-doc.com>, pass: 1234
 
 import getToken from '../api/getToken.js';
-import handleRenderVisits from './handleRenderVisits.js';
+import renderVisits from './renderVisits.js';
 import { getCookie, setCookie } from '../utils/cookie.js';
 
 
@@ -16,7 +16,6 @@ const handleLogin = async (event) => {
   const token = await getToken(body);
 
   token && setCookie('token', token);
-  // token && localStorage.setItem('token', token);
 
   inputs.forEach(input => {
     input.addEventListener('focus', event => {
@@ -26,12 +25,11 @@ const handleLogin = async (event) => {
   });
 
   if (getCookie('token')) {
-  // if (localStorage.getItem('token')) {
     document.querySelector('.header__add-visit').classList.remove('hidden');
     document.querySelector('.login-section').classList.add('hidden');
     document.querySelector('.authorized-section').classList.remove('hidden');
 
-    handleRenderVisits();
+    renderVisits();
 
   } else {
     let warning = document.createElement('p');

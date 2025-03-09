@@ -10,9 +10,7 @@ HTML5, CSS3, JS.
 
 # Contributors
 
-Julia Verchyonova,
-Student 2,
-Student 3
+Julia Verchyonova
 
 
 # Tasks & Responsibilities
@@ -21,74 +19,45 @@ Julia Verchyonova:
 
 - repository creator and holder;
 - design;
-- basic project structure, incl. HTML & CSS styles;
-- card \ visit - db object structure;
+- project architecture;
 - HTML & CSS:
-  - "Welcome" section (header, main, footer): HTML & CSS;
-  - "Login" section and form: HTML & CSS;
-  - "Autorized" section: HTML & CSS:
-    - Header & "add a visit" button;
-    - "Filters" container and filter inputs;
-    - "Visits" container and cards;
+  - "Welcome" section (header, main, footer);
+  - "Login" section and form;
+  - "Authorized" section: filters and cards;
+  - "Modal" section and form;
 - API:
   - axios instance() setting;
   - getToken(body) request;
   - getAllCards() request for list of cards to render on page;
   - deleteCard(id) request for one card;
+  - getCard(id) request for one card;
+  - editCard(id) PUT request to edit card object on server;
+  - addCard() request to add new card to server;
 - utils & handlers & functions:
-  - handleLEnter();
+  - handleEnter();
   - handleLogin();
-  - cookie utils: getCookie(), setCookie(), deleteCookie();
-  - handleRenderVisits() function;
+  - handleSubmit();
+  - render helpers:
+    - renderVisits() function;
+    - renderModalMore() function;
+    - renderNoItems() function;
+    - changeCheckedRadio() function;
   - filtering:
     - debounce() util;
     - matchSearch() helper to iterate all fields over an object;
     - handleFilter() function;
+  - validateInputs() function;
+  - cookie utils: getCookie(), setCookie(), deleteCookie();
 - classes:
   - "PRELOADER" class: constructor, render(parent), remove();
-  - "VISIT" class: constructor, render(parent), remove(), showMore(), showLess();
-- buttons & eventListeners logics:
-  - "enter" button eventListener: handleEnter(), getCookie(token) -> to Login section or to Authorized section & handleRenderVisits();
-  - "login" submit button eventListener: handleLogin(), getToken(body), setCookie(), getCookie(token) -> to Authorized section & handleRenderVisits();
-  - "back" button eventListener on Login page -> to Enter page;
-  - "showMore" & "showLess" buttons eventListeners -> Visit.showMore() & Visit.showLess();
-  - "delete" button eventListener: deleteCard(id) request -> Visit.remove();
-  - filter inputs - "content', "doctor", "status", "urgency" eventListeners: handleFilter(), debounce(function, timeout), getAllCards(),  matchSearch(card, contentFilter) -> Visit.render();
-
-Student 2:
-
-- API:
-  - getCard(id) request for one card;
-  - editCard(id) PATCH/PUT request to edit card object on server;
-- utils & handlers & functions:
-  - ...
-- classes:
-  - "VISIT" class: edit();
-  - "VisitDentist", "VisitCardiologist", "VisitTherapist" (?) or "ModalDentist", "ModalCardiologist", "ModalTherapist" (?);
-- buttons & eventListeners logics:
-  - "edit" button eventListener: getCard(id) request, Visit.edit();
+  - "VISIT" class: constructor, render(parent), remove(), edit(), showMore(), showLess();
+  - "MODAL" class: constructor, render(parent), remove();
+  - "MODALMORE" class: constructor, render(), remove();
+    - "MODALMORECARDIOLOGIST" class extends "MODALMORE";
+    - "MODALMORETHERAPIST" class extends "MODALMORE";
+    - "MODALMOREDENTIST" class extends "MODALMORE";
+- buttons & eventListeners;
 - Drag & Drop;
-- ...;
-- ДОПІШІТЬ СВОЄ;
-
-
-Student 3:
-
-- HTML & CSS:
-  - Modal for new/edited visit;
-- API:
-  - postCard() request to add new card to server;
-- utils & handlers & functions:
-  - ...;
-  - Card Modal: input validation;
-  - ...;
-- classes:
-  - Card "MODAL" class: constructor, render(), remove();
-- buttons & eventListeners logics:
-  - "add card" submit eventListener: ..... send card to server, render card in total list;
-  - ...;
-- ДОПІШІТЬ СВОЄ;
-
 
 
 # Web Preview link

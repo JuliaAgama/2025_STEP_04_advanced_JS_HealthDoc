@@ -2,75 +2,35 @@
 // class VISIT
 
 import deleteCard from "../api/deleteCard.js";
-
-
-/* ************** EXAMPLES OF DOCTORS OBJECTS **************/
-
-// const therapist = {
-//   doctor: 'therapist',
-//   urgency: 'low',
-//   status: "open",
-//   patient: "Smith, John",
-//   problem: 'cough, high temperature, running nose',
-//   description: 'Vitamin C, D, hot tea, paracetamol',
-//   more: {
-//     age: 12,
-//   }
-// };
-
-// const cardiologist = {
-//   doctor: 'therapist',
-//   urgency: 'low',
-//   status: "open",
-//   patient: "Smith, John",
-//   problem: 'cough, high temperature, running nose',
-//   description: 'Vitamin C, D, hot tea, paracetamol',
-//   more: {
-//     age: 42,
-//     weight: 98,
-//     pressure: '120 / 80',
-//     anamnesis: 'diabetes, heart attack, flue, pneumonia',
-//   }
-// };
-
-// const dentist = {
-//   doctor: 'therapist',
-//   urgency: 'low',
-//   status: "open",
-//   patient: "Smith, John",
-//   problem: 'cough, high temperature, running nose',
-//   description: 'Vitamin C, D, hot tea, paracetamol',
-//   more: {
-//     lastVisit: '2023-12-04',
-//   }
-// };
+import getCard from "../api/getCard.js";
+import MODAL from "./modal.js";
+import renderNoItems from "../functions/renderNoItems.js";
 
 
 const visits = document.querySelector('#visits');
 
 class VISIT {
-    constructor({doctor, urgency, status, patient, problem, description, id, more}) {
-      this.doctor = doctor;
-      this.urgency = urgency;
-      this.status = status;
-      this.patient = patient;
-      this.problem = problem;
-      this.description = description;
-      this.more = more;
-      this.id = id;
+  constructor({id, doctor, urgency, status, patient, more}) {
+    this.id = id;
+    this.doctor = doctor;
+    this.urgency = urgency;
+    this.status = status;
+    this.patient = patient;
+    this.more = more;
 
-      this.visit = document.createElement('li');
-      this.buttons = document.createElement('div'); // wrapper for buttons Edit & Delete
-      this.editBtn = document.createElement('button');
-      this.deleteBtn = document.createElement('button');
+    this.visit = document.createElement('li');
+    this.buttons = document.createElement('div'); // wrapper for buttons Edit & Delete
+    this.editBtn = document.createElement('button');
+    this.deleteBtn = document.createElement('button');
 
-      this.moreBtn = document.createElement('button'); //more and less card content
-      this.lessBtn = document.createElement('button');
-      this.moreFragment = document.createDocumentFragment();
-    }
+    this.moreBtn = document.createElement('button'); //more and less card content
+    this.lessBtn = document.createElement('button');
+    this.moreFragment = document.createDocumentFragment();
+  };
 
-    // Create the visit on server and render it on the page
-  render() {
+    // Create the visit on server and render it on the page in particular place vs. container
+  render(container = visits, method = 'prepend') {
+    this.visit.setAttribute('id', this.id);
     this.visit.classList.add('visit');
     let statusOpen = this.status === 'open' ? 'visit__status--open' : ''
     this.visit.innerHTML = `
@@ -94,6 +54,9 @@ class VISIT {
     this.lessBtn.innerHTML = '...less';
     this.visit.append(this.buttons, this.moreBtn, this.lessBtn);
 
+
+    // EVENT LISTENERS ON CARD:
+
     this.deleteBtn.addEventListener('click', async (event) => {
       event.preventDefault;
       this.remove();
@@ -112,10 +75,54 @@ class VISIT {
     this.lessBtn.addEventListener('click', event => {
       event.preventDefault();
       this.showLess();
-    })
+    });
 
-    visits.append(this.visit);
+
+    // DRAG & DROP:
+
+    this.visit.setAttribute('draggable', 'true');
+
+    this.visit.addEventListener('dragstart', event => {
+      event.dataTransfer.setData('id', this.id);
+      event.target.style.opacity = 0.5;
+    });
+
+    this.visit.addEventListener('dragover', event => {
+      event.preventDefault();
+      event.target.style.opacity = 1;
+    });
+
+    this.visit.addEventListener('drop', event => {
+      event.preventDefault();
+      const draggedId = event.dataTransfer.getData('id');
+      const draggedCard = document.getElementById(draggedId);
+      this.visit.before(draggedCard);
+    });
+
+
+    // put card in particular place vs container
+    switch (method) {
+      case 'prepend': {
+        container.prepend(this.visit);
+        break;
+      };
+      case 'append': {
+        container.append(this.visit);
+        break;
+      };
+      case 'before': {
+        container.before(this.visit);
+        break;
+      };
+      case 'after': {
+        container.after(this.visit);
+        break;
+      };
+    };
+
+    document.querySelector('.no-items') && document.querySelector('.no-items').remove();
   };
+
 
 
   // show more info of the card
@@ -147,24 +154,19 @@ class VISIT {
     (async () => {
       let response = await deleteCard(this.id);
       response.status === 200 && this.visit.remove();
-      if (visits.children.length === 0) {
-        let noItems = document.createElement('p');
-        noItems.classList.add('no-items');
-        noItems.textContent = 'No items have been added'
-        document.querySelector('.visits').append(noItems);
-      };
+      visits.children.length === 0 &&  renderNoItems();
     })();
   };
 
 
     // Edit the visit on server and update it on the page
   edit() {
-
-    /*some code here
-    */
-
+    (async () => {
+      let visitObj = await getCard(this.id);
+      let modal = new MODAL(visitObj);
+      modal.render();
+    })();
   };
 };
 
 export default VISIT;
-

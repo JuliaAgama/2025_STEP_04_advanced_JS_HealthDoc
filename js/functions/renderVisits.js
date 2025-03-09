@@ -4,27 +4,23 @@
 import getAllCards from "../api/getAllCards.js";
 import PRELOADER from "../classes/preloader.js";
 import VISIT from "../classes/visit.js";
+import renderNoItems from "./renderNoItems.js";
 
-const handleRenderVisits = async () => {
-// const handleRenderVisits = (cardsArr) => {
+const renderVisits = async () => {
   let preloader = new PRELOADER();
   preloader.render(document.querySelector('.visits'));
   const cards = await getAllCards();
-  // const cards = cardsArr;
-  preloader.remove(); //   ?????? how to handle preloader 'handleRenderVisits' if not async
+  preloader.remove();
 
-  if (cards.length > 0) {
+  if (cards && cards.length > 0) {
     document.querySelector('.no-items') && document.querySelector('.no-items').remove();
     cards.forEach(card => {
       let visit = new VISIT(card);
       visit.render();
     });
   } else {
-    let noItems = document.createElement('p');
-    noItems.classList.add('no-items');
-    noItems.textContent = 'No items have been added'
-    document.querySelector('.visits').append(noItems);
+    renderNoItems();
   }
 };
 
-export default handleRenderVisits;
+export default renderVisits;
