@@ -6,12 +6,14 @@ import handleSubmit from '../functions/handleSubmit.js';
 import changeCheckedRadio from '../functions/changeCheckedRadio.js';
 
 class MODAL {
-  constructor({ id, doctor, patient, urgency, status }) {
+  constructor({ id, doctor, patient, urgency, status, problem, description }) {
     this.id = id;
     this.patient = patient;
     this.urgency = urgency;
     this.status = status;
     this.doctor = doctor;
+    this.problem = problem;
+    this.description = description;
 
     this.modal = document.getElementById('modal-template').content.cloneNode(true);
   };

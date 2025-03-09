@@ -10,25 +10,25 @@ import renderNoItems from "../functions/renderNoItems.js";
 const visits = document.querySelector('#visits');
 
 class VISIT {
-  constructor({id, doctor, urgency, status, patient, more}) {
-    this.id = id;
-    this.doctor = doctor;
-    this.urgency = urgency;
-    this.status = status;
-    this.patient = patient;
-    this.more = more;
+    constructor({id, doctor, urgency, status, patient, more}) {
+      this.id = id;
+      this.doctor = doctor;
+      this.urgency = urgency;
+      this.status = status;
+      this.patient = patient;
+      this.more = more;
 
-    this.visit = document.createElement('li');
-    this.buttons = document.createElement('div'); // wrapper for buttons Edit & Delete
-    this.editBtn = document.createElement('button');
-    this.deleteBtn = document.createElement('button');
+      this.visit = document.createElement('li');
+      this.buttons = document.createElement('div'); // wrapper for buttons Edit & Delete
+      this.editBtn = document.createElement('button');
+      this.deleteBtn = document.createElement('button');
 
-    this.moreBtn = document.createElement('button'); //more and less card content
-    this.lessBtn = document.createElement('button');
-    this.moreFragment = document.createDocumentFragment();
+      this.moreBtn = document.createElement('button'); //more and less card content
+      this.lessBtn = document.createElement('button');
+      this.moreFragment = document.createDocumentFragment();
   };
 
-    // Create the visit on server and render it on the page in particular place vs. container
+    // Render the visit on the page in particular place vs. container
   render(container = visits, method = 'prepend') {
     this.visit.setAttribute('id', this.id);
     this.visit.classList.add('visit');
